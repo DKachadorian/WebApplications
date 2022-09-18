@@ -110,7 +110,7 @@ const Product = class Product {
     constructor(statement){
         let result = statement.split(",");
         this.name=result[0];
-        this.price=parseInt(result[1]);
+        this.price=parseFloat(result[1]);
         this.availability=result[2];
     }
 
@@ -141,7 +141,7 @@ const Product = class Product {
      * This method can also be written in one line; if doing so, consider using String interpolation when calling the product constructor
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array 
      */
-    static halfOff = (products) => {        
+    static halfOff = (products) => {       
         products.forEach(element => {
              return element.price *0.50;           
         })
