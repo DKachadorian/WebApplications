@@ -141,10 +141,13 @@ const Product = class Product {
      * This method can also be written in one line; if doing so, consider using String interpolation when calling the product constructor
      * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array 
      */
-    static halfOff = (products) => {       
-        products.forEach(element => {
-             return element.price *0.50;           
-        })
+    static halfOff = (products) => {  
+        //use map instead of forEach because forEach returns undefined
+        return products.map(element => new Product
+            (`${element.name},
+            ${element.price * 0.5},
+            ${element.availability}`)
+            );     
     }
     /**
      * *****************
